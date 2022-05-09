@@ -1,3 +1,5 @@
+import React from "react"
+
 export interface ButtonProps {
   buttonText: string
   onClick?: () => void
@@ -5,7 +7,9 @@ export interface ButtonProps {
   invisible?: boolean
 }
 
-export function Button({ buttonText, onClick, isCopied, invisible }: ButtonProps) {
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(function Button(props, ref) {
+  const { buttonText, onClick, isCopied, invisible } = props
+
   if (invisible) return null
 
   function calculateColors(isCopied?: boolean) {
@@ -24,3 +28,4 @@ export function Button({ buttonText, onClick, isCopied, invisible }: ButtonProps
     </button>
   )
 }
+)
