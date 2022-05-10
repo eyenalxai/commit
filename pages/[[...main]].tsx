@@ -36,8 +36,12 @@ interface MainQuery {
   main: Array<string> | string | undefined
 }
 
-export const getServerSideProps = async ({ query }: { res: Response; query: MainQuery }) => {
-  if (query === undefined || query.main === undefined || query.main[0] === undefined || query.main === "index") {
+
+export async function getServerSideProps({ query }: { query: MainQuery }) {
+  if (query === undefined
+    || query.main === undefined
+    || query.main[0] === undefined
+    || query.main === "index") {
     return {
       props: {
         commitInitial: getRandomCommit(),
