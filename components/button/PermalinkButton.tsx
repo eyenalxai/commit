@@ -11,7 +11,7 @@ interface PermalinkButtonProps {
 export function PermalinkButton({ isPermalink, setIsPermalink, commit }: PermalinkButtonProps) {
   if (isPermalink)
     return (
-      <Link href={"/"} passHref>
+      <Link href={"https://commit.takx.xyz"} passHref>
         <Button onClick={() => setIsPermalink(false)} buttonText={"back"} />
       </Link>
     )

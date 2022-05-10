@@ -10,6 +10,6 @@ export async function middleware(req: NextRequest): Promise<void | NextResponse>
     const commit = findCommitByHash(req.nextUrl.pathname.substring(1))
     if (commit !== undefined) return new NextResponse(`${commit.message}\n`)
 
-    return NextResponse.rewrite("/405")
+    return NextResponse.rewrite("/404")
   }
 }
