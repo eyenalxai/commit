@@ -8,9 +8,19 @@ export default function Document() {
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
-        <meta content="Commit" property="og:title" />
-        <meta content="https://commit.takx.xyz" property="og:url" />
-        <meta content="App that helps you write better commit messages" name="description" />
+        <meta name="description" content="App that helps you write better commit messages" />
+
+        <meta property="og:url" content="https://commit.takx.xyz/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Commit" />
+        <meta property="og:description" content="App that helps you write better commit messages" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="commit.takx.xyz" />
+        <meta property="twitter:url" content="https://commit.takx.xyz/" />
+        <meta name="twitter:title" content="Commit" />
+        <meta name="twitter:description" content="App that helps you write better commit messages" />
+
         <meta name="theme-color" media="(prefers-color-scheme: light)" content="#e5e7eb" />
         <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1f2937" />
       </Head>
