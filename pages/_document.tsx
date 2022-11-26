@@ -8,14 +8,15 @@ export default function Document() {
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
-        <meta property="og:title" content="commits" />
-        <meta property="og:url" content="https://commit.takx.xyz" />
+        <meta content="Commit" property="og:title" />
+        <meta content="https://commit.takx.xyz" property="og:url" />
+        <meta content="App that helps you write better commit messages" name="description" />
         <meta name="theme-color" media="(prefers-color-scheme: light)" content="#e5e7eb" />
         <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1f2937" />
       </Head>
       <body>
-      <Main />
-      <NextScript />
+        <Main />
+        <NextScript />
       </body>
     </Html>
   )
