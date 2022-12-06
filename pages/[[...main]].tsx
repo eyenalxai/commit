@@ -5,7 +5,6 @@ import { CopyButton } from "../components/button/CopyButton"
 import { PermalinkButton } from "../components/button/PermalinkButton"
 import { Code } from "../components/Code"
 import { Wrapper } from "../components/Wrapper"
-import Head from "next/head"
 
 interface HomeProps {
   commitInitial: Commit
@@ -18,9 +17,6 @@ export default function Home({ commitInitial, isPermalinkInitial }: HomeProps) {
 
   return (
     <Wrapper>
-      <Head>
-        <title>Commit</title>
-      </Head>
       <div className={"container max-w-2xl p-8"}>
         <h1 className={"text-3xl text-gray-800 dark:text-gray-200 mt-12"}>your random commit message is</h1>
         <p className={"text-xl text-gray-800 dark:text-gray-200 mt-12 h-24 flex items-center"}>{commit.message}</p>
@@ -40,8 +36,12 @@ interface MainQuery {
   main: Array<string> | string | undefined
 }
 
+
 export async function getServerSideProps({ query }: { query: MainQuery }) {
-  if (query === undefined || query.main === undefined || query.main[0] === undefined || query.main === "index") {
+  if (query === undefined
+    || query.main === undefined
+    || query.main[0] === undefined
+    || query.main === "index") {
     return {
       props: {
         commitInitial: getRandomCommit(),
