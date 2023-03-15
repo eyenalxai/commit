@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
-import { findCommitByHash, getRandomCommit } from "../util/commit"
+import { findCommitByHash, getRandomCommit } from "./util/commit"
 
 export async function middleware(req: NextRequest): Promise<void | NextResponse> {
   const userAgent = req.headers.get("user-agent")
