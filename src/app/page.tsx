@@ -24,7 +24,7 @@ export default function Home() {
 				<h2 className={cn("text-2xl", "font-semibold")}>{commitMessage}</h2>
 			</div>
 			<div className={cn("flex", "flex-row", "gap-2")}>
-				<CopyButton text={commitMessage}>Copy</CopyButton>
+				<CopyButton text={commitMessage}>copy</CopyButton>
 				<Button
 					variant={"outline"}
 					onClick={async () => {
@@ -32,7 +32,7 @@ export default function Home() {
 						return revalidatePath("/", "page")
 					}}
 				>
-					Another
+					another
 				</Button>
 			</div>
 			<div className={cn("flex", "flex-col", "gap-y-2")}>
