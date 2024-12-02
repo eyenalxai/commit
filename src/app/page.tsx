@@ -1,6 +1,7 @@
 import { CopyButton } from "@/components/copy-button"
 import { Button } from "@/components/ui/button"
 import { copyToClipboard } from "@/lib/clipboard"
+import { env } from "@/lib/env.mjs"
 import { messages } from "@/lib/messages"
 import { scopes } from "@/lib/scopes"
 import { cn } from "@/lib/utils"
@@ -12,6 +13,9 @@ export default function Home() {
 	const randomMessage = messages[Math.floor(Math.random() * messages.length)]
 	const randomScope = scopes[Math.floor(Math.random() * scopes.length)]
 	const commitMessage = `${randomScope}: ${randomMessage}`
+
+	const commitUrl = env.NEXT_PUBLIC_COMMIT_URL
+	const commitUrlMessage = `git commit -m "$(curl -sL ${commitUrl})"`
 
 	return (
 		<div className={cn("w-full", "space-y-4")}>
@@ -46,9 +50,9 @@ export default function Home() {
 						"rounded-md"
 					)}
 				>
-					<code>git commit -m "$(curl -sL URL)"</code>
+					<code>{commitUrlMessage}</code>
 					<CopyButton
-						text={commitMessage}
+						text={commitUrlMessage}
 						size={"icon"}
 						variant={"ghost"}
 						className={cn("hover:bg-background")}
