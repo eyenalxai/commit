@@ -1,5 +1,5 @@
-import { messages } from "@/lib/messages"
-import { scopes } from "@/lib/scopes"
+import { messages } from "@/lib/commit/messages"
+import { scopes } from "@/lib/commit/scopes"
 import { NextResponse } from "next/server"
 
 export const GET = async () => {
