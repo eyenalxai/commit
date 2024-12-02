@@ -1,16 +1,13 @@
 import { CopyButton } from "@/components/copy-button"
 import { Button } from "@/components/ui/button"
-import { messages } from "@/lib/commit/messages"
-import { scopes } from "@/lib/commit/scopes"
+import { getCommitMessage } from "@/lib/commit/get-commit-message"
 import { env } from "@/lib/env.mjs"
 import { cn } from "@/lib/utils"
 import { Copy } from "lucide-react"
 import { revalidatePath } from "next/cache"
 
 export default function Home() {
-	const randomMessage = messages[Math.floor(Math.random() * messages.length)]
-	const randomScope = scopes[Math.floor(Math.random() * scopes.length)]
-	const commitMessage = `${randomScope}: ${randomMessage}`
+	const commitMessage = getCommitMessage()
 
 	const commitUrl = env.NEXT_PUBLIC_COMMIT_URL
 	const commitUrlMessage = `git commit -m "$(curl -sL ${commitUrl})"`
