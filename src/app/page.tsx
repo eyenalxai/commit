@@ -1,6 +1,5 @@
 import { CopyButton } from "@/components/copy-button"
 import { Button } from "@/components/ui/button"
-import { copyToClipboard } from "@/lib/clipboard"
 import { env } from "@/lib/env.mjs"
 import { messages } from "@/lib/messages"
 import { scopes } from "@/lib/scopes"
