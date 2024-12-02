@@ -7,7 +7,6 @@ import { scopes } from "@/lib/scopes"
 import { cn } from "@/lib/utils"
 import { Copy } from "lucide-react"
 import { revalidatePath } from "next/cache"
-import { toast } from "sonner"
 
 export default function Home() {
 	const randomMessage = messages[Math.floor(Math.random() * messages.length)]
