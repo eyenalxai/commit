@@ -2,7 +2,7 @@ import { type NextRequest, NextResponse } from "next/server"
 
 export function proxy(request: NextRequest) {
 	if (
-		request.headers.get("user-agent")?.includes("curl") ||
+		request.headers.get("user-agent")?.includes("curl") === true ||
 		request.headers.get("accept") === "text/plain"
 	) {
 		return NextResponse.redirect(new URL("/api/message", request.url))
