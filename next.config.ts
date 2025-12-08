@@ -1,11 +1,5 @@
 import type { NextConfig } from "next"
-
-const extractDomain = (url: string | undefined) => {
-	if (!url) throw new Error("NEXT_PUBLIC_APP_URL is not set")
-
-	const urlObj = new URL(url)
-	return urlObj.hostname
-}
+import { extractDomain } from "@/lib/domain"
 
 const nextConfig: NextConfig = {
 	transpilePackages: ["geist"],
