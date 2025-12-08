@@ -23,7 +23,7 @@ export default function Home() {
 				<CopyButton text={commitMessage}>copy</CopyButton>
 				<Button
 					variant={"outline"}
-					onClick={async () => {
+					onClick={() => {
 						"use server"
 						return revalidatePath("/", "page")
 					}}
