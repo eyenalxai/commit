@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
 import { getCommitMessage } from "@/lib/commit/get-commit-message"
 
-export const GET = async () => {
+export const GET = () => {
 	return new NextResponse(getCommitMessage(), { status: 200 })
 }
